@@ -10,6 +10,7 @@ from api import GremlinsAPI, Sneknet
 from logger import log
 
 
+increment = 1
 REDDIT_TOKEN = os.environ.get("REDDIT_TOKEN", None)
 if not REDDIT_TOKEN:
     print(back.RED + fore.BLACK)
@@ -166,6 +167,8 @@ while True:
         print(f'[{fore.CYAN}  SEEN  {style.RESET}]', end='')
     else:
         print(f'[{fore.MAGENTA} UNSEEN {style.RESET}]', end='')
+    print(f'[{fore.DARK_ORANGE_3A} {increment} {style.RESET}]', end='')
+    increment += 1
 
     print(f'[{(games_won/games_played)*100:.1f}%]', end='')
 
